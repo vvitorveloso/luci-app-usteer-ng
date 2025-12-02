@@ -431,6 +431,11 @@ return view.extend({
 		o.placeholder = 8;
 		o.datatype = 'uinteger';
 
+		o = s.taboption('settings', form.Value, 'aggressiveness', _('Aggressiveness'), _('Aggressiveness of steering (0-3)'));
+		o.optional = true;
+		o.placeholder = 1;
+		o.datatype = 'uinteger';
+
 		o = s.taboption('settings', form.Value, 'sta_block_timeout', _('Sta block timeout'), _('Maximum amount of time (ms) a station may be blocked due to policy decisions'));
 		o.optional = true;
 		o.placeholder = 30000;
@@ -495,6 +500,21 @@ return view.extend({
 		o = s.taboption('settings', form.Value, 'min_snr', _('Min SNR'), _('Minimum signal-to-noise ratio or signal level (dBm) to remain connected'));
 		o.optional = true;
 		o.placeholder = 0;
+		o.datatype = 'integer';
+
+		o = s.taboption('settings', form.Value, 'min_snr_2g', _('Min SNR 2.4GHz'), _('Minimum signal-to-noise ratio or signal level (dBm) to remain connected on 2.4GHz'));
+		o.optional = true;
+		o.placeholder = -92;
+		o.datatype = 'integer';
+
+		o = s.taboption('settings', form.Value, 'min_snr_5g', _('Min SNR 5GHz'), _('Minimum signal-to-noise ratio or signal level (dBm) to remain connected on 5GHz'));
+		o.optional = true;
+		o.placeholder = -85;
+		o.datatype = 'integer';
+
+		o = s.taboption('settings', form.Value, 'min_snr_6g', _('Min SNR 6GHz'), _('Minimum signal-to-noise ratio or signal level (dBm) to remain connected on 6GHz'));
+		o.optional = true;
+		o.placeholder = -82;
 		o.datatype = 'integer';
 
 		o = s.taboption('settings', form.Value, 'min_snr_kick_delay', _('Min SNR kick delay'), _('Timeout after which a station with SNR < min_SNR will be kicked'));
@@ -595,6 +615,11 @@ return view.extend({
 		o.placeholder = -60;
 		o.datatype = 'integer';
 
+		o = s.taboption('settings', form.Value, 'band_steering_signal_threshold', _('Band steering signal threshold'), _('Signal difference required to trigger band steering'));
+		o.optional = true;
+		o.placeholder = 5;
+		o.datatype = 'uinteger';
+
 		o = s.taboption('settings', form.Value, 'link_measurement_interval', _('Link measurement interval'),
 			_('Interval (ms) the device is sent a link-measurement request to help assess the bi-directional link quality.') +
 			_('Setting the interval to 0 disables link-measurements.')
@@ -604,6 +629,10 @@ return view.extend({
 		o.datatype = 'uinteger';
 
 		o = s.taboption('settings', form.Value, 'node_up_script', _('Node up script'), _('Script to run after bringing up a node'));
+		o.optional = true;
+		o.datatype = 'string';
+
+		o = s.taboption('settings', form.Value, 'ignored_stations', _('Ignored Stations'), _('List of MAC addresses to ignore (comma or space separated)'));
 		o.optional = true;
 		o.datatype = 'string';
 

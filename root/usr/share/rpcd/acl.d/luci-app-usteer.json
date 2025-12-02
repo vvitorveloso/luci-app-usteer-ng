@@ -1,6 +1,6 @@
 {
-  "luci-app-usteer": {
-    "description": "Grant UCI access to LuCI app usteer",
+  "luci-app-usteer-ng": {
+    "description": "Grant UCI access to LuCI app usteer-ng",
     "read": {
       "ubus": {
         "uci": [ "get" ],
