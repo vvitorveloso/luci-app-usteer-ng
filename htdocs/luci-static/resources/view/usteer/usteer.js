@@ -496,6 +496,9 @@ return view.extend({
 		o = s.taboption('settings', form.Flag, 'probe_steering', _('Probe steering'), _('Allow ignoring probe requests for steering purposes')+' ('+_('default false')+')');
 		o.optional = true;
 
+		o = s.taboption('settings', form.Flag, 'disable_beacon_requests', _('Blind Roaming (No Beacon Req)'), _('Disable client-side scanning to prevent lag. Forces roaming based on router measurements only.')+' ('+_('default false')+')');
+		o.optional = true;
+
 		o = s.taboption('settings', form.Value, 'min_connect_snr', _('Min connect SNR'), _('Minimum signal-to-noise ratio or signal level (dBm) to allow connections'));
 		o.optional = true;
 		o.placeholder = 0;
