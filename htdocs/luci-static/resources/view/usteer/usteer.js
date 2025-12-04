@@ -436,6 +436,10 @@ return view.extend({
 		o.placeholder = 1;
 		o.datatype = 'uinteger';
 
+		o = s.taboption('settings', form.DynamicList, 'aggressiveness_mac_list', _('Aggressiveness per MAC'), _('List of MACs to set aggressiveness per station. Format: MAC,level (e.g. ff:ff:ff:ff:ff:ff,2)'));
+		o.optional = true;
+		o.datatype = 'list(string)';
+
 		o = s.taboption('settings', form.Value, 'sta_block_timeout', _('Sta block timeout'), _('Maximum amount of time (ms) a station may be blocked due to policy decisions'));
 		o.optional = true;
 		o.placeholder = 30000;
@@ -520,6 +524,11 @@ return view.extend({
 		o = s.taboption('settings', form.Value, 'min_snr_kick_delay', _('Min SNR kick delay'), _('Timeout after which a station with SNR < min_SNR will be kicked'));
 		o.optional = true;
 		o.placeholder = 5000;
+		o.datatype = 'uinteger';
+
+		o = s.taboption('settings', form.Value, 'reassociation_delay', _('Reassociation delay'), _('Timeout (s) a station is requested to avoid reassociation after BSS-transition'));
+		o.optional = true;
+		o.placeholder = 30;
 		o.datatype = 'uinteger';
 
 		o = s.taboption('settings', form.Value, 'steer_reject_timeout', _('Steer reject timeout'), _('Timeout (ms) for which a client will not be steered after rejecting a BSS-transition-request'));
