@@ -519,11 +519,6 @@ return view.extend({
 		o.placeholder = -85;
 		o.datatype = 'integer';
 
-		o = s.taboption('settings', form.Value, 'min_snr_6g', _('Min SNR 6GHz'), _('Minimum signal-to-noise ratio or signal level (dBm) to remain connected on 6GHz'));
-		o.optional = true;
-		o.placeholder = -82;
-		o.datatype = 'integer';
-
 		o = s.taboption('settings', form.Value, 'min_snr_kick_delay', _('Min SNR kick delay'), _('Timeout after which a station with SNR < min_SNR will be kicked'));
 		o.optional = true;
 		o.placeholder = 5000;
